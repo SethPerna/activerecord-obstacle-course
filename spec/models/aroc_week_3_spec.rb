@@ -27,7 +27,7 @@ describe 'ActiveRecord Obstacle Course, Week 3' do
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    users = User.distinct.includes(:orders).joins(:items).where(items: {id: @item_8.id}).pluck(:name)
+    users = User.distinct.includes(:orders, :items).where(items: {id: @item_8.id}).pluck(:name)
     #users = User.select(:name).distinct.joins(:orders).where(user_id: id).joins(:order_items).where('order_items.order = orders.id').where("order_items.item_id = #{@item_8.id}").order(:name)
     # ------------------------------------------------------------
 
